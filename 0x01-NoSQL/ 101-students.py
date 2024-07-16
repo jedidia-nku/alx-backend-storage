@@ -5,7 +5,7 @@
 def top_students(mongo_collection):
     # sourcery skip: inline-immediately-returned-variable
     """ Returns all students sorted by average score """
-    top_student = mongo_collection.aggregate([
+    top_students = mongo_collection.aggregate([
         {
             "$project": {
                 "name": "$name",
@@ -15,4 +15,4 @@ def top_students(mongo_collection):
         {"$sort": {"averageScore": -1}}
     ])
 
-    return top_student
+    return top_students
