@@ -18,6 +18,7 @@ def count_calls(method: Callable) -> Callable:
             self._redis.incr(method.__qualname__)
         return method(self, *args, **kwargs)
     return invoker
+    # Ending of lines
 
 
 def call_history(method: Callable) -> Callable:
